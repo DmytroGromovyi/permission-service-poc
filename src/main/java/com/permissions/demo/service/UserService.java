@@ -1,6 +1,7 @@
 package com.permissions.demo.service;
 
 import com.permissions.demo.dto.AuthSystemUserDTO;
+import com.permissions.demo.exception.UserNotFoundException;
 import com.permissions.demo.model.User;
 import com.permissions.demo.repository.UserRepository;
 import com.permissions.demo.util.UserDTOMapper;
@@ -15,7 +16,7 @@ public class UserService {
 
     public AuthSystemUserDTO getUserById(Long userId) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
+                .orElseThrow(() -> new UserNotFoundException(userId));
         return UserDTOMapper.mapToDTO(user);
     }
 
