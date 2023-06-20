@@ -13,11 +13,12 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final UserDTOMapper userDTOMapper;
 
     public AuthSystemUserDTO getUserById(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException(userId));
-        return UserDTOMapper.mapToDTO(user);
+        return userDTOMapper.mapToDTO(user);
     }
 
 }

@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PermissionsAPIApplication {
+public class PermissionsServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PermissionsAPIApplication.class, args);
+        SpringApplication.run(PermissionsServiceApplication.class, args);
     }
 
 }
