@@ -21,8 +21,8 @@ values (1, 1),
        (3, 4);
 
 insert into user(name)
-values ('Test User'),
-       ('Test Admin');
+values ('DBrVPwGP5peOV5wdwJu4GazdiOg2'),
+       ('DBrVPwGP5peOV5wdwJu4GazdiOg1');
 
 insert into user_roles(roles_id, user_id)
 values (1, 2),

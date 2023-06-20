@@ -10,6 +10,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthSystemUserDTO {
-    private Long userId;
+    private String userId;
     private List<RoleDTO> roles;
 }

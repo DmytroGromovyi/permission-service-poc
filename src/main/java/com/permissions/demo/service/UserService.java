@@ -15,8 +15,8 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserDTOMapper userDTOMapper;
 
-    public AuthSystemUserDTO getUserById(Long userId) {
-        User user = userRepository.findById(userId)
+    public AuthSystemUserDTO getUserByName(String userId) {
+        User user = userRepository.findByName(userId)
                 .orElseThrow(() -> new UserNotFoundException(userId));
         return userDTOMapper.mapToDTO(user);
     }
