@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @RestControllerAdvice
-public class GlobalControllerAdvice extends ResponseEntityExceptionHandler {
+public class UserNotFoundHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(UserNotFoundException.class)
+    @ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String handleFileRequest(UserNotFoundException ex) {
         return ex.getMessage();
