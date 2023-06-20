@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping("/{userId}")
     @ApiOperation(value = "Get user permissions info by user id")
-    public AuthSystemUserDTO get(@PathVariable Integer userId) {
+    public AuthSystemUserDTO get(@PathVariable Long userId) {
         return userService.getUserById(userId);
     }
 

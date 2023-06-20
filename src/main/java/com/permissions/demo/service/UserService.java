@@ -13,7 +13,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public AuthSystemUserDTO getUserById(Integer userId) {
+    public AuthSystemUserDTO getUserById(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
         return UserDTOMapper.mapToDTO(user);
