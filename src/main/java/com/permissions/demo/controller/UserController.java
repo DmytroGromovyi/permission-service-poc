@@ -6,6 +6,7 @@ import com.permissions.demo.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,8 +23,8 @@ public class UserController {
 
     @GetMapping
     @ApiOperation(value = "Get user permissions info by user id")
-    public AuthSystemUserDTO getUser(Principal principal) {
-        var user = (CustomUserDetails) principal;
+    public AuthSystemUserDTO getUser(UsernamePasswordAuthenticationToken principal) {
+        var user = (CustomUserDetails) principal.getPrincipal();
         return userService.getUserByName(user.getUserId());
     }
 
