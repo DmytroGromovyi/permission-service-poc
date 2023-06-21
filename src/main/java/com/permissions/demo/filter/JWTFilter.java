@@ -26,6 +26,7 @@ public class JWTFilter extends OncePerRequestFilter {
                                     FilterChain filterChain) throws ServletException, IOException {
         final var token = getBearerToken(request);
         var jwt = JWT.decode(token);
+        //TODO: verify token
         final var authentication = createAuth(jwt);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         filterChain.doFilter(request, response);
